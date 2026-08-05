@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en" class="single no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#02070b">
+<meta name="description" content="CTL Amedica companywide update featuring people, clinical milestones, training and upcoming events.">
+<title>CTL Amedica | Progress, Precisely</title>
+<script>document.documentElement.classList.replace('no-js','js');</script>
+<style>
+:root{
+  --ink:#02070b;
+  --ink-2:#071118;
+  --ink-3:#0b1b24;
+  --ice:#f4f8fa;
+  --white:#ffffff;
+  --text:#f7fbfd;
+  --muted:#a5b2ba;
+  --muted-dark:#5f6f78;
+  --line:rgba(255,255,255,.12);
+  --cyan:#74f5ff;
+  --cyan-2:#20cbd6;
+  --champagne:#d8b975;
+  --shadow:0 30px 90px rgba(0,0,0,.30);
+  --soft-shadow:0 22px 60px rgba(4,19,27,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{margin:0;background:var(--ink);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;overflow-x:hidden}
+body.modal-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%}
+button{cursor:pointer}
+.skip-link{position:fixed;left:16px;top:-80px;z-index:300;background:var(--cyan);color:var(--ink);padding:12px 16px;border-radius:999px;font-size:13px;font-weight:800;transition:top .2s ease}
+.skip-link:focus{top:16px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.progress{position:fixed;left:0;top:0;width:0;height:2px;background:var(--cyan);box-shadow:0 0 16px rgba(116,245,255,.65);z-index:120}
+.shell{width:min(1180px,calc(100% - 48px));margin:0 auto}
+.eyebrow{font-size:11px;line-height:1.35;letter-spacing:2.2px;text-transform:uppercase;font-weight:700;color:var(--cyan)}
+.display{font-size:clamp(60px,8vw,118px);line-height:.91;letter-spacing:-.065em;font-weight:650;margin:18px 0 28px}
+.heading{font-size:clamp(42px,5.3vw,76px);line-height:.98;letter-spacing:-.05em;font-weight:620;margin:16px 0 22px}
+.lead{font-size:19px;line-height:1.65;color:var(--muted);max-width:760px;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:14px 20px;border:1px solid transparent;font-size:13px;font-weight:700;letter-spacing:.01em;transition:transform .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,.story-tab:focus-visible,.play-button:focus-visible,.modal-close:focus-visible,.invite-trigger:focus-visible{outline:3px solid rgba(116,245,255,.5);outline-offset:4px}
+.btn-primary{background:var(--cyan);color:var(--ink);box-shadow:0 0 0 1px rgba(116,245,255,.2),0 0 30px rgba(116,245,255,.16)}
+.btn-secondary{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.18);color:var(--text)}
+.btn-light{background:var(--ink);color:var(--white)}
+.btn-ghost-dark{background:transparent;color:var(--ink);border-color:rgba(2,7,11,.18)}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(2,7,11,.80);backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.topbar img{width:230px;height:auto}
+.topbar nav{display:flex;align-items:center;gap:28px}
+.topbar nav a{font-size:12px;color:#c2cdd2;transition:color .2s ease}
+.topbar nav a:hover{color:var(--cyan)}
+.hero{position:relative;min-height:850px;display:grid;align-items:center;overflow:hidden;isolation:isolate;background:radial-gradient(circle at var(--mx,72%) var(--my,28%),rgba(116,245,255,.13),transparent 23%),linear-gradient(180deg,#02070b 0%,#040b10 100%)}
+.hero:before{content:"";position:absolute;right:-9%;top:-15%;width:46%;height:120%;background:linear-gradient(180deg,rgba(116,245,255,.11),rgba(116,245,255,0));transform:skewX(-16deg);filter:blur(2px);z-index:-1}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.45;box-shadow:0 0 18px rgba(116,245,255,.6)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center;padding:110px 0 96px}
+.hero-copy{max-width:650px}
+.hero-copy .lead{max-width:590px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-visual{position:relative;display:grid;place-items:center;min-height:540px}
+.hero-frame{position:relative;width:min(650px,100%);aspect-ratio:2048/1582;border-radius:30px;padding:8px;background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(255,255,255,.025));box-shadow:var(--shadow),0 0 80px rgba(116,245,255,.10);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.hero-frame:hover{transform:translateY(-6px);box-shadow:0 38px 110px rgba(0,0,0,.40),0 0 92px rgba(116,245,255,.16)}
+.hero-frame:before{content:"";position:absolute;inset:-1px;border-radius:30px;padding:1px;background:linear-gradient(135deg,rgba(116,245,255,.78),rgba(255,255,255,.08),rgba(216,185,117,.48));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.hero-frame img{width:100%;height:100%;object-fit:contain;border-radius:22px}
+.hero-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid rgba(255,255,255,.10);border-radius:20px;overflow:hidden;margin-top:46px;background:rgba(255,255,255,.06)}
+.metric{padding:20px 18px;background:rgba(2,7,11,.76)}
+.metric strong{display:block;font-size:22px;line-height:1.05;font-weight:620;color:var(--text)}
+.metric span{display:block;margin-top:7px;font-size:10px;line-height:1.35;letter-spacing:1.3px;text-transform:uppercase;color:#84939c}
+.section{padding:124px 0}
+.section-dark{background:var(--ink)}
+.section-light{background:var(--ice);color:var(--ink)}
+.section-light .eyebrow{color:#0a8f99}
+.section-light .lead{color:var(--muted-dark)}
+.film-intro{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:end;margin-bottom:54px}
+.film-intro .lead{max-width:580px}
+.video-shell{position:relative;border-radius:32px;padding:1px;background:linear-gradient(135deg,rgba(116,245,255,.72),rgba(255,255,255,.06),rgba(216,185,117,.42));box-shadow:0 40px 120px rgba(0,0,0,.38),0 0 90px rgba(116,245,255,.10)}
+.video-inner{position:relative;aspect-ratio:16/9;border-radius:31px;overflow:hidden;background:#02070b}
+.video-inner iframe{display:block;width:100%;height:100%;border:0}
+.video-poster{position:absolute;inset:0;border:0;padding:0;background:url('assets/video-poster-v6.jpg') center/cover no-repeat;color:var(--white)}
+.single .video-poster{background-image:url('assets/video-poster-v6.jpg')}
+.video-poster:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 45%,rgba(116,245,255,.03));transition:background .3s ease}
+.video-poster:hover:after{background:linear-gradient(90deg,transparent 42%,rgba(116,245,255,.08))}
+.play-button{position:absolute;left:78%;top:51%;transform:translate(-50%,-50%);width:112px;height:112px;border-radius:50%;border:1px solid rgba(116,245,255,.6);background:rgba(116,245,255,.94);color:var(--ink);display:grid;place-items:center;font-size:38px;box-shadow:0 0 0 18px rgba(116,245,255,.08),0 0 54px rgba(116,245,255,.28);transition:transform .3s ease,box-shadow .3s ease}
+.video-poster:hover .play-button{transform:translate(-50%,-50%) scale(1.05);box-shadow:0 0 0 24px rgba(116,245,255,.07),0 0 70px rgba(116,245,255,.36)}
+.video-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.video-meta div{padding:18px 0;border-top:1px solid rgba(255,255,255,.13)}
+.video-meta strong{display:block;font-size:15px;font-weight:600}
+.video-meta span{display:block;margin-top:5px;color:#788892;font-size:11px;text-transform:uppercase;letter-spacing:1.4px}
+.momentum-head{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:58px}
+.momentum-head .lead{max-width:540px}
+.klimt-collection{position:relative;margin-bottom:72px;padding:42px;border-radius:32px;background:var(--ink);color:var(--text);overflow:hidden;box-shadow:0 28px 80px rgba(4,19,27,.18)}
+.klimt-collection:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 8%,rgba(216,185,117,.17),transparent 28%),radial-gradient(circle at 14% 92%,rgba(116,245,255,.10),transparent 26%);pointer-events:none}
+.klimt-collection-header{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:42px;align-items:end;margin-bottom:32px}
+.klimt-collection-header h3{font-size:clamp(38px,4.8vw,64px);line-height:.98;letter-spacing:-.045em;margin:15px 0 18px;font-weight:620}
+.klimt-collection-header p{max-width:700px;margin:0;color:var(--muted);font-size:17px;line-height:1.65}
+.klimt-case-mark{min-width:170px;text-align:right}
+.klimt-case-mark strong{display:block;color:var(--champagne);font-size:clamp(86px,10vw,138px);line-height:.72;letter-spacing:-.075em;font-weight:650;text-shadow:0 0 38px rgba(216,185,117,.22)}
+.klimt-case-mark span{display:block;margin-top:17px;color:#84959f;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700}
+.klimt-gallery{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.klimt-promo-card{margin:0;border:1px solid rgba(255,255,255,.11);border-radius:24px;background:rgba(255,255,255,.035);overflow:hidden;box-shadow:0 18px 48px rgba(0,0,0,.24);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.klimt-promo-card:hover{transform:translateY(-4px);border-color:rgba(216,185,117,.34);box-shadow:0 26px 68px rgba(0,0,0,.32),0 0 34px rgba(216,185,117,.08)}
+.klimt-promo-lead{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr)}
+.klimt-promo-art{display:grid;place-items:center;min-height:0;background:#06111c;overflow:hidden}
+.klimt-promo-art img{width:100%;height:100%;aspect-ratio:1;object-fit:contain;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.klimt-promo-card:hover .klimt-promo-art img{transform:scale(1.012)}
+.klimt-promo-lead .klimt-promo-art img{aspect-ratio:1;object-fit:cover}
+.klimt-promo-copy{padding:28px 30px 30px}
+.klimt-promo-lead .klimt-promo-copy{display:flex;flex-direction:column;justify-content:center;padding:38px}
+.klimt-promo-label{display:block;color:var(--champagne);font-size:9px;line-height:1.45;letter-spacing:1.7px;text-transform:uppercase;font-weight:750}
+.klimt-promo-copy h4{margin:12px 0 13px;color:var(--text);font-size:clamp(25px,2.8vw,38px);line-height:1.04;letter-spacing:-.03em;font-weight:610}
+.klimt-promo-copy p{margin:0;color:#9eabb3;font-size:14px;line-height:1.65}
+.klimt-staff-note{display:flex;align-items:flex-start;gap:9px;margin-top:21px;padding-top:18px;border-top:1px solid rgba(255,255,255,.10);color:#71838d;font-size:10px;line-height:1.55;letter-spacing:.75px;text-transform:uppercase}
+.klimt-staff-note:before{content:"";width:5px;height:5px;margin-top:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 9px rgba(116,245,255,.5);flex:0 0 auto}
+.momentum-followup{display:flex;align-items:end;justify-content:space-between;gap:34px;margin:0 0 24px;padding-top:4px}
+.momentum-followup h3{margin:7px 0 0;color:var(--ink);font-size:clamp(27px,3.2vw,42px);line-height:1.05;letter-spacing:-.035em;font-weight:610}
+.momentum-followup p{max-width:500px;margin:0;color:var(--muted-dark);font-size:15px;line-height:1.6}
+.story-tabs{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(2,7,11,.14);border-bottom:1px solid rgba(2,7,11,.14);margin-bottom:48px}
+.story-tab{position:relative;text-align:left;border:0;background:transparent;padding:24px 18px 23px;color:#5f6f78;transition:color .25s ease,background .25s ease}
+.story-tab span{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px}
+.story-tab strong{display:block;font-size:16px;font-weight:600}
+.story-tab:after{content:"";position:absolute;left:18px;right:18px;bottom:-1px;height:2px;background:var(--cyan-2);transform:scaleX(0);transform-origin:left;transition:transform .3s ease;box-shadow:0 0 12px rgba(32,203,214,.35)}
+.story-tab.active{color:var(--ink);background:rgba(255,255,255,.42)}
+.story-tab.active:after{transform:scaleX(1)}
+.story-stage{display:grid;grid-template-columns:1.06fr .94fr;gap:72px;align-items:center}
+.story-art{position:relative;min-height:640px;border-radius:30px;background:#e9eff1;overflow:hidden;box-shadow:var(--soft-shadow)}
+.story-art:after{content:"";position:absolute;right:-90px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:rgba(116,245,255,.20);filter:blur(70px);pointer-events:none}
+.story-art img{width:100%;height:640px;object-fit:contain;background:#eef3f5;transition:opacity .28s ease,transform .38s ease}
+.story-art.changing img{opacity:0;transform:scale(.985)}
+.story-copy{max-width:470px}
+.story-number{font-size:14px;letter-spacing:2px;color:#0a8f99;font-weight:700}
+.story-copy h3{font-size:clamp(40px,4.6vw,66px);line-height:.98;letter-spacing:-.045em;margin:20px 0 24px;font-weight:620}
+.story-copy p{font-size:18px;line-height:1.7;color:var(--muted-dark);margin:0}
+.story-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.story-tags span{padding:9px 12px;border:1px solid rgba(2,7,11,.15);border-radius:999px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#53636c}
+.events-intro{text-align:center;max-width:850px;margin:0 auto 62px}
+.events-intro .lead{margin:0 auto}
+.event-collections{display:grid;gap:42px}
+.event-collection{position:relative;border:1px solid rgba(255,255,255,.12);border-radius:32px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));box-shadow:var(--shadow),0 0 85px rgba(116,245,255,.05);overflow:hidden}
+.event-collection:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(116,245,255,.72),transparent)}
+.collection-header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:end;padding:46px 48px 38px;border-bottom:1px solid rgba(255,255,255,.11);background:radial-gradient(circle at 90% 10%,rgba(116,245,255,.09),transparent 28%)}
+.collection-header h3{font-size:clamp(48px,5.6vw,78px);line-height:.95;letter-spacing:-.055em;margin:16px 0 16px;font-weight:620}
+.collection-header p{max-width:670px;margin:0;color:var(--muted);font-size:16px;line-height:1.65}
+.collection-countdown{min-width:180px;text-align:right;padding-bottom:3px}
+.collection-countdown>span{display:block;margin-bottom:9px;color:#667983;font-size:9px;letter-spacing:1.55px;text-transform:uppercase}
+.event-subgroup{padding:38px 48px 46px}
+.event-subgroup+.event-subgroup{border-top:1px solid rgba(255,255,255,.09)}
+.event-subgroup-header{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:24px}
+.event-type{display:block;font-size:9px;line-height:1.4;letter-spacing:1.7px;text-transform:uppercase;color:var(--cyan);font-weight:700}
+.event-subgroup-header h4{font-size:clamp(27px,3vw,42px);line-height:1.05;letter-spacing:-.035em;margin:10px 0 10px;font-weight:610}
+.event-meta{display:flex;align-items:center;flex-wrap:wrap;gap:7px 10px;color:#7f8f98;font-size:10px;line-height:1.5;letter-spacing:1.15px;text-transform:uppercase}
+.event-meta .event-meta-separator{width:3px;height:3px;border-radius:50%;background:#5f7079;flex:0 0 auto}
+.subtle-countdown{display:inline-flex;align-items:center;gap:7px;color:#72838c;font-size:9px;line-height:1.4;letter-spacing:1.25px;text-transform:uppercase;font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.subtle-countdown i{width:4px;height:4px;border-radius:50%;background:rgba(116,245,255,.72);box-shadow:0 0 8px rgba(116,245,255,.44);flex:0 0 auto}
+.subtle-countdown.is-live{color:#9fcfd3}
+.subtle-countdown.is-past{color:#5d6d75}
+.subgroup-countdown{padding-bottom:4px}
+.invitation-grid{display:grid;gap:18px;align-items:start}
+.invitation-grid-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.invitation-grid-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.invitation-grid-single{grid-template-columns:minmax(0,760px)}
+.invitation-grid-portrait-single{grid-template-columns:minmax(260px,430px)}
+.invitation-card{margin:0;border:1px solid rgba(255,255,255,.11);border-radius:22px;background:rgba(2,7,11,.56);overflow:hidden;box-shadow:0 18px 46px rgba(0,0,0,.22);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.invitation-card:hover{transform:translateY(-4px);border-color:rgba(116,245,255,.24);box-shadow:0 26px 62px rgba(0,0,0,.28),0 0 34px rgba(116,245,255,.06)}
+.invite-trigger{display:block;width:100%;padding:0;border:0;background:#02070b;color:inherit;text-align:initial;overflow:hidden}
+.invite-trigger:focus-visible{outline:3px solid rgba(116,245,255,.55);outline-offset:-3px}
+.invite-trigger img{width:100%;height:auto;transition:transform .4s cubic-bezier(.2,.8,.2,1),filter .3s ease}
+.invite-trigger:hover img{transform:scale(1.012);filter:brightness(1.025)}
+.invitation-card-landscape .invite-trigger img{aspect-ratio:649/365;object-fit:cover}
+.invitation-card figcaption{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 17px 16px;border-top:1px solid rgba(255,255,255,.09)}
+.invitation-card figcaption>span{min-width:0}
+.invitation-card figcaption small{display:block;margin-bottom:5px;color:#60727c;font-size:8px;letter-spacing:1.35px;text-transform:uppercase}
+.invitation-card figcaption b{display:block;overflow:hidden;text-overflow:ellipsis;color:#dfe8ec;font-size:12px;line-height:1.3;font-weight:600;white-space:nowrap}
+.closing{padding:118px 0;background:var(--ice);color:var(--ink);text-align:center}
+.closing .heading{max-width:900px;margin-left:auto;margin-right:auto}
+.closing .lead{max-width:680px;margin:0 auto;color:var(--muted-dark)}
+.closing-line{width:min(380px,70%);height:1px;background:linear-gradient(90deg,transparent,var(--cyan-2),transparent);margin:44px auto 0;box-shadow:0 0 16px rgba(32,203,214,.45)}
+footer{padding:38px 0;background:#010508;border-top:1px solid rgba(255,255,255,.08)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+footer img{width:250px}
+footer p{margin:0;color:#64757f;font-size:10px;letter-spacing:1.35px;text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+.toast{position:fixed;left:50%;bottom:26px;z-index:160;transform:translate(-50%,110px);opacity:0;padding:14px 18px;border:1px solid rgba(116,245,255,.25);border-radius:999px;background:rgba(2,7,11,.92);backdrop-filter:blur(18px);color:var(--text);font-size:12px;box-shadow:0 16px 50px rgba(0,0,0,.35);transition:.3s ease}
+.toast.show{transform:translate(-50%,0);opacity:1}
+dialog{border:0;padding:0;background:transparent;width:min(900px,92vw);max-height:90vh}
+dialog::backdrop{background:rgba(2,7,11,.84);backdrop-filter:blur(12px)}
+dialog.fallback-open{display:block;position:fixed;inset:0;margin:auto;z-index:200;max-height:90vh}
+dialog.fallback-open:before{content:"";position:fixed;inset:0;background:rgba(2,7,11,.84);z-index:-1}
+.invite-modal{position:relative;display:grid;grid-template-columns:minmax(0,.96fr) minmax(330px,1.04fr);background:var(--ink-2);border:1px solid rgba(255,255,255,.13);border-radius:28px;overflow:hidden;box-shadow:0 36px 120px rgba(0,0,0,.55)}
+.invite-visual{display:grid;place-items:center;min-height:540px;max-height:82vh;padding:22px;background:#02070b;overflow:auto}
+.invite-visual img{width:100%;height:100%;max-height:74vh;object-fit:contain;object-position:center;background:#02070b}
+.invite-copy{padding:46px 42px;display:flex;flex-direction:column;justify-content:center}
+.invite-copy h2{font-size:48px;line-height:.98;letter-spacing:-.045em;margin:16px 0 14px}
+.invite-copy .event-meta{margin-bottom:18px}
+.invite-copy .modal-countdown{margin-bottom:22px}
+.invite-copy p{color:var(--muted);font-size:16px;line-height:1.65;margin:0 0 28px}
+.invite-actions{display:flex;flex-wrap:wrap;gap:10px}
+.invite-actions:empty{display:none}
+.modal-close{position:absolute;right:14px;top:14px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(2,7,11,.76);color:var(--white);font-size:21px;z-index:3}
+.noscript-note{margin:24px 0 0;padding:16px;border:1px solid rgba(255,255,255,.14);border-radius:14px;color:var(--muted);font-size:14px;line-height:1.55}
+@media(max-width:980px){
+  .hero-grid,.film-intro,.story-stage{grid-template-columns:1fr}
+  .hero-grid{padding-top:86px;gap:56px}.hero-copy{max-width:760px}.hero-visual{min-height:500px}
+  .film-intro{gap:20px}.momentum-head{align-items:flex-start;flex-direction:column}.klimt-collection-header{grid-template-columns:1fr}.klimt-case-mark{text-align:left}.klimt-promo-lead{grid-template-columns:1fr}.momentum-followup{align-items:flex-start;flex-direction:column}.story-stage{gap:42px}.story-art{min-height:560px}.story-art img{height:560px}
+  .collection-header{grid-template-columns:1fr}.collection-countdown{text-align:left}.invitation-grid-three{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:720px){
+  .shell{width:min(100% - 32px,1180px)}.topbar-inner{min-height:64px}.topbar img{width:190px}.topbar nav{display:none}
+  .hero{min-height:auto}.hero-grid{padding:72px 0 76px;gap:44px}.display{font-size:58px}.lead{font-size:16px}.hero-visual{min-height:300px}.hero-frame{width:100%}.hero-metrics{grid-template-columns:1fr}.metric{padding:16px 18px}
+  .section{padding:86px 0}.heading{font-size:46px}.film-intro{margin-bottom:36px}.play-button{left:78%;width:76px;height:76px;font-size:25px;box-shadow:0 0 0 12px rgba(116,245,255,.08),0 0 38px rgba(116,245,255,.25)}.video-meta{grid-template-columns:1fr}.video-meta div{padding:14px 0}
+  .klimt-collection{padding:28px 20px;border-radius:24px;margin-bottom:54px}.klimt-collection-header{gap:28px}.klimt-case-mark strong{font-size:104px}.klimt-gallery{grid-template-columns:1fr}.klimt-promo-lead{grid-column:auto}.klimt-promo-copy,.klimt-promo-lead .klimt-promo-copy{padding:24px 22px 26px}.klimt-promo-copy h4{font-size:29px}.momentum-followup{margin-bottom:18px}.story-tabs{grid-template-columns:1fr}.story-tab{padding:18px 10px}.story-tab:after{left:10px;right:10px}.story-art{min-height:420px}.story-art img{height:420px}.story-copy h3{font-size:42px}.story-copy p{font-size:16px}
+  .event-collection{border-radius:24px}.collection-header{padding:34px 24px 30px}.collection-header h3{font-size:48px}.event-subgroup{padding:30px 24px 36px}.event-subgroup-header{align-items:flex-start;flex-direction:column;gap:14px}.event-meta{font-size:9px;letter-spacing:1px}.invitation-grid-three,.invitation-grid-two{grid-template-columns:1fr}.invitation-card figcaption{align-items:flex-start;flex-direction:column;gap:10px}.closing{padding:90px 0}.footer-inner{flex-direction:column;text-align:center}.invite-modal{grid-template-columns:1fr}.invite-visual{min-height:0;max-height:55vh;padding:16px}.invite-visual img{max-height:49vh}.invite-copy{padding:32px 24px}.invite-copy h2{font-size:39px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to company update</a>
+<div class="progress" id="progress"></div>
+<div class="toast" id="toast" aria-live="polite"></div>
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a href="#top" aria-label="CTL Amedica home"><img src="assets/logo.png" alt="CTL Amedica — rethink what’s possible"></a>
+    <nav aria-label="Page sections">
+      <a href="#film">Film</a>
+      <a href="#momentum">Momentum</a>
+      <a href="#events">Events</a>
+    </nav>
+  </div>
+</header>
+<main id="mainContent">
+  <section class="hero" id="top">
+    <div class="shell hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">CTL Amedica / Companywide Update</div>
+        <h1 class="display">Progress,<br>precisely.</h1>
+        <p class="lead">A focused celebration of the people, clinical milestones and moments bringing CTL Amedica together.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#film">Watch the film <span aria-hidden="true">▶</span></a>
+          <a class="btn btn-secondary" href="#events">See what’s next <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-metrics" aria-label="Featured updates">
+          <div class="metric"><strong>50</strong><span>KLIMT cases</span></div>
+          <div class="metric"><strong>First use</strong><span>MedStar Health</span></div>
+          <div class="metric"><strong>Hands-on</strong><span>Blue Bell training</span></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-frame"><img src="assets/distributor-incentive-2026.webp" alt="CTL Amedica 2026 Distributor Incentive Program artwork describing a 200 dollar reward per qualifying case from July through September 2026"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="film">
+    <div class="shell">
+      <div class="film-intro">
+        <div class="reveal">
+          <div class="eyebrow">A Day in the Life / Hailey</div>
+          <h2 class="heading">Meet the people behind the precision.</h2>
+        </div>
+        <p class="lead reveal">A closer look at the pace, preparation and people behind a day at CTL Amedica—without leaving the experience.</p>
+      </div>
+      <div class="video-shell reveal">
+        <div class="video-inner" id="videoStage">
+          <button class="video-poster" id="loadVideo" type="button" aria-label="Play A Day in the Life featuring Hailey">
+            <span class="play-button" aria-hidden="true">▶</span>
+          </button>
+        </div>
+      </div>
+      <div class="video-meta reveal" aria-label="Video themes">
+        <div><strong>People</strong><span>The human center</span></div>
+        <div><strong>Precision</strong><span>The work behind the work</span></div>
+        <div><strong>Purpose</strong><span>Why every detail matters</span></div>
+      </div>
+      <noscript><p class="noscript-note">JavaScript is turned off. Watch the film directly on <a href="https://www.youtube.com/watch?v=hTvh0J2HdPI">YouTube</a>.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section section-light" id="momentum">
+    <div class="shell">
+      <div class="momentum-head">
+        <div class="reveal">
+          <div class="eyebrow">Company moments</div>
+          <h2 class="heading">Three moments.<br>One shared momentum.</h2>
+        </div>
+        <p class="lead reveal">The 50th KLIMT case campaign is presented as one coordinated milestone collection, followed by training and clinical progress.</p>
+      </div>
+
+      <article class="klimt-collection reveal" aria-labelledby="klimtCollectionTitle">
+        <header class="klimt-collection-header">
+          <div>
+            <div class="eyebrow">01 / Milestone collection</div>
+            <h3 id="klimtCollectionTitle">50 KLIMT cases.<br>One remarkable team.</h3>
+            <p>Three complementary campaign directions celebrate the milestone from the team, partnership and clinician perspectives. Together they recognize the people behind the case while keeping patient care at the center.</p>
+          </div>
+          <div class="klimt-case-mark" aria-label="50 KLIMT cases">
+            <strong id="caseCount">0</strong>
+            <span>KLIMT cases</span>
+          </div>
+        </header>
+
+        <div class="klimt-gallery" aria-label="50th KLIMT case promotional artwork collection">
+          <figure class="klimt-promo-card klimt-promo-lead">
+            <div class="klimt-promo-art"><img src="assets/klimt-50-celebration-team.webp" alt="Celebratory 50th KLIMT case artwork showing a five-person clinical team holding gold 5 and 0 balloons" loading="lazy"></div>
+            <figcaption class="klimt-promo-copy">
+              <span class="klimt-promo-label">Design 01 / Lead announcement</span>
+              <h4>Team celebration</h4>
+              <p>The navy-and-gold treatment gives the milestone a formal, high-value presence. The group photograph and oversized balloons make this the strongest primary announcement for companywide and external channels.</p>
+              <div class="klimt-staff-note">Five-person clinical team shown together; the artwork names Dr. Samir Lapsiwala and frames the achievement as a shared celebration.</div>
+            </figcaption>
+          </figure>
+
+          <figure class="klimt-promo-card">
+            <div class="klimt-promo-art"><img src="assets/klimt-50-partnership-social.webp" alt="Blue-and-teal 50th KLIMT case social artwork featuring a foreground team member taking a selfie and a five-person clinical team in the background" loading="lazy"></div>
+            <figcaption class="klimt-promo-copy">
+              <span class="klimt-promo-label">Design 02 / Social story</span>
+              <h4>Partnership and patient care</h4>
+              <p>The brighter clinical palette and selfie-led composition feel personal and social-first. Supporting copy gives equal weight to the team, partnership and the patient-care purpose behind the milestone.</p>
+              <div class="klimt-staff-note">One team member is featured in the foreground with the five-person clinical group visible behind her.</div>
+            </figcaption>
+          </figure>
+
+          <figure class="klimt-promo-card">
+            <div class="klimt-promo-art"><img src="assets/klimt-50-clinician-portrait.webp" alt="Dark blue clinician spotlight artwork labeled Dr. Samir Lapsiwala and celebrating the 50th KLIMT case" loading="lazy"></div>
+            <figcaption class="klimt-promo-copy">
+              <span class="klimt-promo-label">Design 03 / Clinician spotlight</span>
+              <h4>Individual recognition</h4>
+              <p>The restrained portrait format focuses attention on the clinician and KLIMT device. It works best as a profile post, follow-up recognition piece or supporting visual after the team announcement.</p>
+              <div class="klimt-staff-note">Solo clinician portrait; the supplied artwork displays the name Dr. Samir Lapsiwala.</div>
+            </figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <div class="momentum-followup reveal">
+        <div>
+          <div class="eyebrow">02–03 / More momentum</div>
+          <h3>Training and clinical progress</h3>
+        </div>
+        <p>Select either story to explore the hands-on preparation and first-use results continuing the momentum.</p>
+      </div>
+
+      <div class="story-tabs reveal" role="tablist" aria-label="Additional company moments">
+        <button class="story-tab active" id="tab-training" type="button" data-story="training" role="tab" aria-selected="true" aria-controls="story-panel"><span>02 / Training</span><strong>Blue Bell office</strong></button>
+        <button class="story-tab" id="tab-success" type="button" data-story="success" role="tab" aria-selected="false" aria-controls="story-panel" tabindex="-1"><span>03 / Clinical</span><strong>MedStar first use</strong></button>
+      </div>
+
+      <div class="story-stage reveal" id="story-panel" role="tabpanel" aria-labelledby="tab-training" aria-live="polite">
+        <div class="story-art" id="storyArt"><img id="storyImage" src="assets/training-web.jpg" alt="Hands-on training at the CTL Amedica Blue Bell office"></div>
+        <div class="story-copy">
+          <div class="story-number" id="storyNumber">02 / TRAINING</div>
+          <h3 id="storyTitle">Hands-on learning at Blue Bell.</h3>
+          <p id="storyText">Dr. Barghi joined the team for an in-depth session featuring full tray evaluation with instruments and implants.</p>
+          <div class="story-tags" id="storyTags"><span>Training</span><span>Blue Bell</span><span>Instruments + implants</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="events">
+    <div class="shell">
+      <div class="events-intro reveal">
+        <div class="eyebrow">Upcoming / Event Collections</div>
+        <h2 class="heading">Every invitation, in its place.</h2>
+        <p class="lead">Conference graphics, dinner invitations and after-hours details are grouped by event window, with a quiet live countdown carried across every invitation.</p>
+      </div>
+
+      <div class="event-collections">
+        <article class="event-collection reveal" aria-labelledby="nassCollectionTitle">
+          <header class="collection-header">
+            <div>
+              <div class="eyebrow">San Antonio / October 14–17</div>
+              <h3 id="nassCollectionTitle">NASS 2026</h3>
+              <p>The conference invitation and Friday dinner concepts are organized together for the San Antonio event window.</p>
+            </div>
+            <div class="collection-countdown">
+              <span>Opening day</span>
+              <strong class="subtle-countdown" data-countdown data-start="2026-10-14T00:00:00-05:00" data-end="2026-10-18T00:00:00-05:00" data-mode="date" data-event="NASS 2026"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong>
+            </div>
+          </header>
+
+          <section class="event-subgroup" aria-labelledby="nassInviteTitle">
+            <header class="event-subgroup-header">
+              <div>
+                <span class="event-type">Conference invitation</span>
+                <h4 id="nassInviteTitle">Join CTL Amedica at NASS 2026</h4>
+                <div class="event-meta"><span>October 14–17, 2026</span><span class="event-meta-separator" aria-hidden="true"></span><span>San Antonio, TX</span><span class="event-meta-separator" aria-hidden="true"></span><span>Henry B. Gonzalez Convention Center</span></div>
+              </div>
+            </header>
+            <div class="invitation-grid invitation-grid-single">
+              <figure class="invitation-card invitation-card-landscape">
+                <button class="invite-trigger" type="button" aria-label="Open NASS 2026 conference invitation" data-invite-title="NASS 2026" data-invite-kicker="Conference invitation" data-invite-meta="October 14–17, 2026|San Antonio, TX" data-invite-start="2026-10-14T00:00:00-05:00" data-invite-end="2026-10-18T00:00:00-05:00" data-invite-mode="date" data-invite-note="Conference details are presented in the invitation artwork.">
+                  <img src="assets/nass-2026-invitation.png" alt="CTL Amedica NASS 2026 invitation for San Antonio" loading="lazy">
+                </button>
+                <figcaption><span><small>Primary invitation</small><b>NASS 2026</b></span><strong class="subtle-countdown" data-countdown data-start="2026-10-14T00:00:00-05:00" data-end="2026-10-18T00:00:00-05:00" data-mode="date" data-event="NASS 2026"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong></figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="event-subgroup" aria-labelledby="siloInviteTitle">
+            <header class="event-subgroup-header">
+              <div>
+                <span class="event-type">Dinner invitation / Three concepts</span>
+                <h4 id="siloInviteTitle">Dinner at Si Lo Prime</h4>
+                <div class="event-meta"><span>Friday, October 16, 2026</span><span class="event-meta-separator" aria-hidden="true"></span><span>6:45 PM CT</span><span class="event-meta-separator" aria-hidden="true"></span><span>401 S Alamo St</span></div>
+              </div>
+              <strong class="subtle-countdown subgroup-countdown" data-countdown data-start="2026-10-16T18:45:00-05:00" data-end="2026-10-17T00:00:00-05:00" data-mode="timed" data-event="Dinner at Si Lo Prime"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong>
+            </header>
+            <div class="invitation-grid invitation-grid-three">
+              <figure class="invitation-card">
+                <button class="invite-trigger" type="button" aria-label="Open emerald Si Lo Prime dinner invitation" data-invite-title="Dinner at Si Lo Prime" data-invite-kicker="Invitation concept 01 / Emerald River Walk" data-invite-meta="Friday, October 16, 2026|6:45 PM CT|San Antonio, TX" data-invite-start="2026-10-16T18:45:00-05:00" data-invite-end="2026-10-17T00:00:00-05:00" data-invite-mode="timed" data-invite-note="Scan the QR code on the invitation to RSVP.">
+                  <img src="assets/silo-prime-emerald-invitation.png" alt="Emerald Si Lo Prime dinner invitation with River Walk imagery" loading="lazy">
+                </button>
+                <figcaption><span><small>Concept 01</small><b>Emerald River Walk</b></span><strong class="subtle-countdown" data-countdown data-start="2026-10-16T18:45:00-05:00" data-end="2026-10-17T00:00:00-05:00" data-mode="timed" data-event="Dinner at Si Lo Prime"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong></figcaption>
+              </figure>
+              <figure class="invitation-card">
+                <button class="invite-trigger" type="button" aria-label="Open marble Si Lo Prime dinner invitation" data-invite-title="Dinner at Si Lo Prime" data-invite-kicker="Invitation concept 02 / Marble and Tower" data-invite-meta="Friday, October 16, 2026|6:45 PM CT|San Antonio, TX" data-invite-start="2026-10-16T18:45:00-05:00" data-invite-end="2026-10-17T00:00:00-05:00" data-invite-mode="timed" data-invite-note="Scan the QR code on the invitation to RSVP.">
+                  <img src="assets/silo-prime-marble-invitation.png" alt="White marble Si Lo Prime dinner invitation with Tower of the Americas" loading="lazy">
+                </button>
+                <figcaption><span><small>Concept 02</small><b>Marble and Tower</b></span><strong class="subtle-countdown" data-countdown data-start="2026-10-16T18:45:00-05:00" data-end="2026-10-17T00:00:00-05:00" data-mode="timed" data-event="Dinner at Si Lo Prime"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong></figcaption>
+              </figure>
+              <figure class="invitation-card">
+                <button class="invite-trigger" type="button" aria-label="Open white Si Lo Prime dinner invitation" data-invite-title="Dinner at Si Lo Prime" data-invite-kicker="Invitation concept 03 / White River Walk" data-invite-meta="Friday, October 16, 2026|6:45 PM CT|San Antonio, TX" data-invite-start="2026-10-16T18:45:00-05:00" data-invite-end="2026-10-17T00:00:00-05:00" data-invite-mode="timed" data-invite-note="Scan the QR code on the invitation to RSVP.">
+                  <img src="assets/silo-prime-white-invitation.png" alt="White Si Lo Prime dinner invitation with River Walk and San Antonio sketch" loading="lazy">
+                </button>
+                <figcaption><span><small>Concept 03</small><b>White River Walk</b></span><strong class="subtle-countdown" data-countdown data-start="2026-10-16T18:45:00-05:00" data-end="2026-10-17T00:00:00-05:00" data-mode="timed" data-event="Dinner at Si Lo Prime"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong></figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="event-subgroup" aria-labelledby="bohanansInviteTitle">
+            <header class="event-subgroup-header">
+              <div>
+                <span class="event-type">Dinner invitation / Two concepts</span>
+                <h4 id="bohanansInviteTitle">Dinner at Bohanan’s</h4>
+                <div class="event-meta"><span>Friday, October 16, 2026</span><span class="event-meta-separator" aria-hidden="true"></span><span>7:00 PM CT</span><span class="event-meta-separator" aria-hidden="true"></span><span>219 E Houston St #275</span></div>
+              </div>
+              <strong class="subtle-countdown subgroup-countdown" data-countdown data-start="2026-10-16T19:00:00-05:00" data-end="2026-10-17T00:00:00-05:00" data-mode="timed" data-event="Dinner at Bohanan’s"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong>
+            </header>
+            <div class="invitation-grid invitation-grid-two">
+              <figure class="invitation-card">
+                <button class="invite-trigger" type="button" aria-label="Open River Walk Bohanan's dinner invitation" data-invite-title="Dinner at Bohanan’s" data-invite-kicker="Invitation concept 01 / River Walk" data-invite-meta="Friday, October 16, 2026|7:00 PM CT|San Antonio, TX" data-invite-start="2026-10-16T19:00:00-05:00" data-invite-end="2026-10-17T00:00:00-05:00" data-invite-mode="timed" data-invite-note="Scan the QR code on the invitation to RSVP.">
+                  <img src="assets/bohanans-riverwalk-invitation.png" alt="Bohanan's dinner invitation with River Walk at night" loading="lazy">
+                </button>
+                <figcaption><span><small>Concept 01</small><b>River Walk at Night</b></span><strong class="subtle-countdown" data-countdown data-start="2026-10-16T19:00:00-05:00" data-end="2026-10-17T00:00:00-05:00" data-mode="timed" data-event="Dinner at Bohanan’s"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong></figcaption>
+              </figure>
+              <figure class="invitation-card">
+                <button class="invite-trigger" type="button" aria-label="Open black marble Bohanan's dinner invitation" data-invite-title="Dinner at Bohanan’s" data-invite-kicker="Invitation concept 02 / Black Marble" data-invite-meta="Friday, October 16, 2026|7:00 PM CT|San Antonio, TX" data-invite-start="2026-10-16T19:00:00-05:00" data-invite-end="2026-10-17T00:00:00-05:00" data-invite-mode="timed" data-invite-note="Scan the QR code on the invitation to RSVP.">
+                  <img src="assets/bohanans-black-marble-invitation.png" alt="Black marble Bohanan's dinner invitation with steak imagery" loading="lazy">
+                </button>
+                <figcaption><span><small>Concept 02</small><b>Black Marble</b></span><strong class="subtle-countdown" data-countdown data-start="2026-10-16T19:00:00-05:00" data-end="2026-10-17T00:00:00-05:00" data-mode="timed" data-event="Dinner at Bohanan’s"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong></figcaption>
+              </figure>
+            </div>
+          </section>
+        </article>
+
+        <article class="event-collection reveal" aria-labelledby="cnsCollectionTitle">
+          <header class="collection-header">
+            <div>
+              <div class="eyebrow">Washington, D.C. / October 31–November 4</div>
+              <h3 id="cnsCollectionTitle">CNS 2026</h3>
+              <p>The CNS 2026 conference invitation and both companion Aim for After Hours happy-hour invitations are grouped in one event window.</p>
+            </div>
+            <div class="collection-countdown">
+              <span>Opening day</span>
+              <strong class="subtle-countdown" data-countdown data-start="2026-10-31T00:00:00-04:00" data-end="2026-11-05T00:00:00-05:00" data-mode="date" data-event="CNS 2026"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong>
+            </div>
+          </header>
+
+          <section class="event-subgroup" aria-labelledby="cnsInviteTitle">
+            <header class="event-subgroup-header">
+              <div>
+                <span class="event-type">Conference invitation</span>
+                <h4 id="cnsInviteTitle">CNS 2026 Annual Meeting</h4>
+                <div class="event-meta"><span>October 31–November 4, 2026</span><span class="event-meta-separator" aria-hidden="true"></span><span>Washington, D.C.</span><span class="event-meta-separator" aria-hidden="true"></span><span>Walter E. Washington Convention Center</span></div>
+              </div>
+            </header>
+            <div class="invitation-grid invitation-grid-single">
+              <figure class="invitation-card invitation-card-landscape">
+                <button class="invite-trigger" type="button" aria-label="Open CNS 2026 conference invitation" data-invite-title="CNS 2026" data-invite-kicker="Conference invitation" data-invite-meta="October 31–November 4, 2026|Washington, D.C." data-invite-start="2026-10-31T00:00:00-04:00" data-invite-end="2026-11-05T00:00:00-05:00" data-invite-mode="date" data-invite-note="Conference dates and location are included with the invitation collection.">
+                  <img src="assets/cns-2026-invitation.png" alt="CTL Amedica CNS 2026 invitation with Washington skyline" loading="lazy">
+                </button>
+                <figcaption><span><small>Primary invitation</small><b>CNS 2026</b></span><strong class="subtle-countdown" data-countdown data-start="2026-10-31T00:00:00-04:00" data-end="2026-11-05T00:00:00-05:00" data-mode="date" data-event="CNS 2026"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong></figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="event-subgroup" aria-labelledby="aimInviteTitle">
+            <header class="event-subgroup-header">
+              <div>
+                <span class="event-type">CNS 2026 happy hour / Two companion invitations</span>
+                <h4 id="aimInviteTitle">Aim for After Hours</h4>
+                <div class="event-meta"><span>Sunday, November 1, 2026</span><span class="event-meta-separator" aria-hidden="true"></span><span>6:00–8:00 PM ET</span><span class="event-meta-separator" aria-hidden="true"></span><span>Flight Club D.C.</span></div>
+              </div>
+            </header>
+            <div class="invitation-grid invitation-grid-two">
+              <figure class="invitation-card">
+                <button class="invite-trigger" type="button" aria-label="Open the CNS 2026 Aim for After Hours event-details invitation" data-invite-title="Aim for After Hours" data-invite-kicker="CNS 2026 happy hour / Event details" data-invite-meta="Sunday, November 1, 2026|6:00–8:00 PM ET|Flight Club D.C." data-invite-start="2026-11-01T18:00:00-05:00" data-invite-end="2026-11-01T20:00:00-05:00" data-invite-mode="timed" data-invite-note="This companion invitation emphasizes the event setting, venue, date and time. Open the invitation site or add the event to your calendar." data-invite-link="https://ctl-amedica-nov-1-after-hours.netlify.app/" data-invite-calendar="add-to-calendar.ics">
+                  <img src="assets/aim-for-after-hours-cns-2026.png" alt="CTL Amedica Aim for After Hours event-details invitation for CNS 2026 in Washington, D.C." loading="lazy">
+                </button>
+                <figcaption><span><small>Companion invitation 01</small><b>Event details</b></span><strong class="subtle-countdown" data-countdown data-start="2026-11-01T18:00:00-05:00" data-end="2026-11-01T20:00:00-05:00" data-mode="timed" data-event="Aim for After Hours"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong></figcaption>
+              </figure>
+              <figure class="invitation-card">
+                <button class="invite-trigger" type="button" aria-label="Open the CNS 2026 Aim for After Hours QR RSVP invitation" data-invite-title="Aim for After Hours" data-invite-kicker="CNS 2026 happy hour / QR RSVP" data-invite-meta="Sunday, November 1, 2026|6:00–8:00 PM ET|Flight Club D.C." data-invite-start="2026-11-01T18:00:00-05:00" data-invite-end="2026-11-01T20:00:00-05:00" data-invite-mode="timed" data-invite-note="Scan the QR code on the invitation to view the RSVP experience, or use the invitation-site button below." data-invite-link="https://ctl-amedica-nov-1-after-hours.netlify.app/" data-invite-calendar="add-to-calendar.ics">
+                  <img src="assets/aim-invite-web.jpg" alt="CTL Amedica Aim for After Hours QR RSVP invitation for CNS 2026 in Washington, D.C." loading="lazy">
+                </button>
+                <figcaption><span><small>Companion invitation 02</small><b>QR RSVP</b></span><strong class="subtle-countdown" data-countdown data-start="2026-11-01T18:00:00-05:00" data-end="2026-11-01T20:00:00-05:00" data-mode="timed" data-event="Aim for After Hours"><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong></figcaption>
+              </figure>
+            </div>
+          </section>
+        </article>
+      </div>
+      <noscript><p class="noscript-note">Countdowns require JavaScript, but every date, time and invitation remains available above.</p></noscript>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="shell reveal">
+      <div class="eyebrow">The momentum continues</div>
+      <h2 class="heading">One company.<br>Shared momentum.</h2>
+      <p class="lead">More shared moments are ahead—organized clearly, timed quietly and ready when the team needs them.</p>
+      <div class="closing-line"></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="shell footer-inner">
+    <img src="assets/logo.png" alt="CTL Amedica — rethink what’s possible">
+    <p>Internal companywide communication / clinical luxury edition</p>
+  </div>
+</footer>
+
+<dialog id="inviteDialog" aria-labelledby="inviteTitle">
+  <div class="invite-modal">
+    <button class="modal-close" id="closeInvite" type="button" aria-label="Close invitation">×</button>
+    <div class="invite-visual"><img id="inviteDialogImage" src="" alt=""></div>
+    <div class="invite-copy">
+      <div class="eyebrow" id="inviteDialogKicker">Full invitation</div>
+      <h2 id="inviteTitle">Event invitation</h2>
+      <div class="event-meta" id="inviteDialogMeta"></div>
+      <strong class="subtle-countdown modal-countdown" id="inviteDialogCountdown" data-countdown><i aria-hidden="true"></i><span data-countdown-output>Calculating</span></strong>
+      <p id="inviteDialogNote">Scan the QR code on the invitation to RSVP.</p>
+      <div class="invite-actions" id="inviteDialogActions">
+        <a class="btn btn-primary" id="inviteDialogLink" href="#" target="_blank" rel="noopener">Open invitation site ↗</a>
+        <a class="btn btn-secondary" id="inviteDialogCalendar" href="#" download>Add to calendar ＋</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script>
+document.documentElement.classList.remove('no-js');
+
+const storyData={
+  training:{number:'02 / TRAINING',title:'Hands-on learning at Blue Bell.',text:'Dr. Barghi joined the team for an in-depth session featuring full tray evaluation with instruments and implants.',image:'assets/training-web.jpg',alt:'Hands-on training at the CTL Amedica Blue Bell office',tags:['Training','Blue Bell','Instruments + implants'],tab:'tab-training'},
+  success:{number:'03 / CLINICAL',title:'First-time use. Successful case.',text:'MedStar Washington Hospital Center completed the health system’s first KLIMT expandable cage case. The campaign artwork recognizes the clinical team and highlights positive feedback on intraoperative height, restoration and correction.',image:'assets/klimt-first-use-medstar.webp',alt:'CTL Amedica campaign artwork celebrating the first successful KLIMT case at MedStar Washington Hospital Center with the pictured clinical team and clinician testimonial',tags:['First-time use','MedStar Washington','KLIMT'],tab:'tab-success'}
+};
+
+const isSplit=location.pathname.includes('/webview-split/');
+const assetPath=path=>isSplit?'../'+path:path;
+
+function loadVideo(){
+  const stage=document.getElementById('videoStage');
+  if(stage.querySelector('iframe'))return;
+  stage.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/hTvh0J2HdPI?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="CTL Amedica — A Day in the Life — Hailey" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+}
+document.getElementById('loadVideo').addEventListener('click',loadVideo);
+
+const storyArt=document.getElementById('storyArt');
+const storyPanel=document.getElementById('story-panel');
+function selectStory(key,focus=false){
+  const data=storyData[key];
+  document.querySelectorAll('.story-tab').forEach(button=>{
+    const active=button.dataset.story===key;
+    button.classList.toggle('active',active);
+    button.setAttribute('aria-selected',String(active));
+    button.tabIndex=active?0:-1;
+    if(active&&focus)button.focus();
+  });
+  storyPanel.setAttribute('aria-labelledby',data.tab);
+  storyArt.classList.add('changing');
+  window.setTimeout(()=>{
+    const image=document.getElementById('storyImage');
+    image.src=assetPath(data.image);image.alt=data.alt;
+    document.getElementById('storyNumber').textContent=data.number;
+    document.getElementById('storyTitle').textContent=data.title;
+    document.getElementById('storyText').textContent=data.text;
+    document.getElementById('storyTags').innerHTML=data.tags.map(tag=>`<span>${tag}</span>`).join('');
+    storyArt.classList.remove('changing');
+  },180);
+}
+const storyTabs=[...document.querySelectorAll('.story-tab')];
+storyTabs.forEach((button,index)=>{
+  button.addEventListener('click',()=>selectStory(button.dataset.story));
+  button.addEventListener('keydown',event=>{
+    if(!['ArrowRight','ArrowLeft','Home','End'].includes(event.key))return;
+    event.preventDefault();
+    let next=index;
+    if(event.key==='ArrowRight')next=(index+1)%storyTabs.length;
+    if(event.key==='ArrowLeft')next=(index-1+storyTabs.length)%storyTabs.length;
+    if(event.key==='Home')next=0;
+    if(event.key==='End')next=storyTabs.length-1;
+    selectStory(storyTabs[next].dataset.story,true);
+  });
+});
+
+const countEl=document.getElementById('caseCount');
+let counted=false;
+function countToFifty(){
+  if(counted)return;counted=true;
+  const start=performance.now(),duration=1150;
+  function frame(now){
+    const p=Math.min(1,(now-start)/duration);
+    const eased=1-Math.pow(1-p,3);
+    countEl.textContent=String(Math.round(50*eased));
+    if(p<1)requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+
+const toast=document.getElementById('toast');
+let toastTimer;
+function showToast(message){
+  clearTimeout(toastTimer);toast.textContent=message;toast.classList.add('show');
+  toastTimer=setTimeout(()=>toast.classList.remove('show'),2600);
+}
+function countdownText(element,now=Date.now()){
+  const start=Date.parse(element.dataset.start||'');
+  const end=Date.parse(element.dataset.end||'');
+  const mode=element.dataset.mode||'timed';
+  if(!Number.isFinite(start))return 'Date to be announced';
+  if(now>=start){
+    if(Number.isFinite(end)&&now<end)return 'Now underway';
+    return 'Event concluded';
+  }
+  const diff=start-now;
+  if(mode==='date'){
+    const days=Math.max(1,Math.ceil(diff/86400000));
+    return `${days} ${days===1?'day':'days'} to go`;
+  }
+  const totalMinutes=Math.max(0,Math.floor(diff/60000));
+  const days=Math.floor(totalMinutes/1440);
+  const hours=Math.floor((totalMinutes%1440)/60);
+  const minutes=totalMinutes%60;
+  return days>0?`${days}d · ${hours}h · ${minutes}m`:`${hours}h · ${minutes}m`;
+}
+function updateCountdown(element){
+  const output=element.querySelector('[data-countdown-output]');
+  if(!output)return;
+  const text=countdownText(element);
+  output.textContent=text;
+  element.classList.toggle('is-live',text==='Now underway');
+  element.classList.toggle('is-past',text==='Event concluded');
+  const eventName=element.dataset.event||'Event';
+  element.setAttribute('aria-label',`${eventName}: ${text}`);
+}
+function updateCountdowns(){document.querySelectorAll('[data-countdown]').forEach(updateCountdown)}
+updateCountdowns();
+window.setInterval(updateCountdowns,30000);
+
+const dialog=document.getElementById('inviteDialog');
+const dialogImage=document.getElementById('inviteDialogImage');
+const dialogKicker=document.getElementById('inviteDialogKicker');
+const dialogTitle=document.getElementById('inviteTitle');
+const dialogMeta=document.getElementById('inviteDialogMeta');
+const dialogCountdown=document.getElementById('inviteDialogCountdown');
+const dialogNote=document.getElementById('inviteDialogNote');
+const dialogActions=document.getElementById('inviteDialogActions');
+const dialogLink=document.getElementById('inviteDialogLink');
+const dialogCalendar=document.getElementById('inviteDialogCalendar');
+let inviteReturnFocus=null;
+
+function configureDialog(trigger){
+  const image=trigger.querySelector('img');
+  dialogImage.src=image.currentSrc||image.src;
+  dialogImage.alt=image.alt;
+  dialogKicker.textContent=trigger.dataset.inviteKicker||'Full invitation';
+  dialogTitle.textContent=trigger.dataset.inviteTitle||'Event invitation';
+  const meta=(trigger.dataset.inviteMeta||'').split('|').filter(Boolean);
+  dialogMeta.innerHTML=meta.map((item,index)=>`${index?'<span class="event-meta-separator" aria-hidden="true"></span>':''}<span>${item}</span>`).join('');
+  dialogCountdown.dataset.start=trigger.dataset.inviteStart||'';
+  dialogCountdown.dataset.end=trigger.dataset.inviteEnd||'';
+  dialogCountdown.dataset.mode=trigger.dataset.inviteMode||'timed';
+  dialogCountdown.dataset.event=trigger.dataset.inviteTitle||'Event';
+  updateCountdown(dialogCountdown);
+  dialogNote.textContent=trigger.dataset.inviteNote||'Scan the QR code on the invitation to RSVP.';
+  const link=trigger.dataset.inviteLink||'';
+  const calendar=trigger.dataset.inviteCalendar||'';
+  dialogLink.hidden=!link;
+  dialogCalendar.hidden=!calendar;
+  if(link)dialogLink.href=link;
+  if(calendar)dialogCalendar.href=calendar;
+  dialogActions.hidden=!link&&!calendar;
+}
+function openDialog(trigger){
+  inviteReturnFocus=trigger;
+  configureDialog(trigger);
+  if(typeof dialog.showModal==='function')dialog.showModal();
+  else{dialog.setAttribute('open','');dialog.classList.add('fallback-open');}
+  document.body.classList.add('modal-open');
+  document.getElementById('closeInvite').focus();
+}
+function closeDialog(){
+  if(typeof dialog.close==='function'&&dialog.open)dialog.close();
+  dialog.removeAttribute('open');dialog.classList.remove('fallback-open');
+  document.body.classList.remove('modal-open');
+  if(inviteReturnFocus)inviteReturnFocus.focus();
+}
+document.querySelectorAll('.invite-trigger').forEach(trigger=>trigger.addEventListener('click',()=>openDialog(trigger)));
+document.getElementById('closeInvite').addEventListener('click',closeDialog);
+dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&dialog.hasAttribute('open'))closeDialog()});
+
+if('IntersectionObserver' in window){
+  const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible');if(entry.target.classList.contains('klimt-collection'))countToFifty()}
+  }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+}else{
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+  countToFifty();
+}
+
+window.addEventListener('scroll',()=>{
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('progress').style.width=(max?window.scrollY/max*100:0)+'%';
+},{passive:true});
+
+const hero=document.getElementById('top');
+hero.addEventListener('pointermove',event=>{
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const rect=hero.getBoundingClientRect();
+  hero.style.setProperty('--mx',((event.clientX-rect.left)/rect.width*100)+'%');
+  hero.style.setProperty('--my',((event.clientY-rect.top)/rect.height*100)+'%');
+});
+
+</script>
+</body>
+</html>
