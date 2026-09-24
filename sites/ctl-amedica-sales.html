@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111214" />
+  <meta name="description" content="Choose your CTL Amedica sales representative to access their personalized resource page." />
+  <title>CTL Amedica | Sales Team Directory</title>
+
+  <!--
+  ============================================================
+  CTL AMEDICA SALES DIRECTORY — GOOGLE TAG MANAGER
+  Container: GTM-KLCZVW96
+
+  GA4 Measurement IDs (G-XXXXXXXXXX) are configured INSIDE GTM.
+  This page sends structured dataLayer events that GTM can route
+  to a master GA4 property and/or representative-specific GA4
+  properties.
+  ============================================================
+  -->
+
+  <!-- Consent defaults must be set before Google Tag Manager loads. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('ctl_sales_analytics_consent'); } catch (_) {}
+
+      var analyticsState = stored === 'granted' ? 'granted' : 'denied';
+
+      gtag('consent', 'default', {
+        analytics_storage: analyticsState,
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+      });
+    })();
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KLCZVW96');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    :root {
+      --ctl-yellow: #ffc81a;
+      --ink: #0f1114;
+      --ink-2: #202329;
+      --muted: #6d727b;
+      --line: #e7e8eb;
+      --soft: #f6f6f7;
+      --white: #ffffff;
+      --focus: #725b00;
+      --shadow: 0 18px 48px rgba(12, 14, 18, 0.08);
+      --radius: 16px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: var(--soft);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      width: 100%;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 40px), var(--max));
+      min-height: 78px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      min-width: 0;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 194px;
+      max-width: 48vw;
+      height: auto;
+      display: block;
+    }
+
+    .header-label {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    main {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+      padding: 76px 0 70px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 48px;
+      padding-bottom: 38px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: #5b4a00;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 4px;
+      background: var(--ctl-yellow);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.35rem, 5vw, 4.85rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 760;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.16rem);
+      line-height: 1.65;
+    }
+
+    .hero-mark {
+      width: 132px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-mark::before {
+      content: "6";
+      font-size: 3.3rem;
+      font-weight: 760;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .hero-mark::after {
+      content: "REPRESENTATIVES";
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .directory-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 34px 0 18px;
+    }
+
+    .directory-heading h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 760;
+      letter-spacing: -0.015em;
+    }
+
+    .directory-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .rep-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .rep-card {
+      position: relative;
+      min-height: 226px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-decoration: none;
+      overflow: hidden;
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
+    }
+
+    .rep-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 4px;
+      background: var(--ctl-yellow);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+
+    .rep-card:hover {
+      transform: translateY(-3px);
+      border-color: #d8d9dd;
+      box-shadow: var(--shadow);
+    }
+
+    .rep-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .rep-card:focus-visible {
+      outline: 3px solid var(--ctl-yellow);
+      outline-offset: 3px;
+    }
+
+    .rep-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .avatar {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .arrow {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--ink);
+      font-size: 1.15rem;
+      transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .rep-card:hover .arrow {
+      transform: translate(2px, -2px);
+      background: var(--ctl-yellow);
+      border-color: var(--ctl-yellow);
+    }
+
+    .rep-meta {
+      min-width: 0;
+    }
+
+    .rep-name {
+      margin: 0;
+      font-size: 1.28rem;
+      line-height: 1.14;
+      letter-spacing: -0.028em;
+      font-weight: 740;
+    }
+
+    .rep-role {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .rep-cta {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink-2);
+      font-size: 0.86rem;
+      font-weight: 720;
+    }
+
+    .rep-cta::before {
+      content: "";
+      width: 16px;
+      height: 2px;
+      background: var(--ctl-yellow);
+    }
+
+    .site-footer {
+      width: 100%;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .footer-inner {
+      width: min(calc(100% - 40px), var(--max));
+      min-height: 106px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-copy {
+      color: rgba(255,255,255,0.64);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .footer-link:hover {
+      color: var(--ctl-yellow);
+    }
+
+    .consent {
+      position: fixed;
+      inset: auto 18px 18px 18px;
+      z-index: 1000;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 18px;
+      display: none;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      background: rgba(17,18,20,0.98);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+    }
+
+    .consent.is-visible {
+      display: grid;
+    }
+
+    .consent p {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.84rem;
+      line-height: 1.55;
+    }
+
+    .consent strong {
+      color: var(--white);
+    }
+
+    .consent-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .consent button {
+      min-height: 42px;
+      border: 0;
+      padding: 0 16px;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 760;
+      cursor: pointer;
+    }
+
+    .btn-accept {
+      background: var(--ctl-yellow);
+      color: var(--ink);
+    }
+
+    .btn-decline {
+      background: #2b2e33;
+      color: var(--white);
+    }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0,0,0,0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        padding-top: 54px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-mark {
+        width: 100%;
+        height: 78px;
+        aspect-ratio: auto;
+        justify-content: start;
+        padding: 0 22px;
+      }
+
+      .hero-mark::before {
+        content: "6 sales representatives";
+        font-size: 1rem;
+        letter-spacing: 0;
+      }
+
+      .rep-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .header-inner,
+      main,
+      .footer-inner {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      .header-inner {
+        min-height: 70px;
+      }
+
+      .brand img {
+        width: 170px;
+      }
+
+      .header-label {
+        display: none;
+      }
+
+      main {
+        padding: 44px 0 50px;
+      }
+
+      .directory-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .rep-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rep-card {
+        min-height: 196px;
+      }
+
+      .footer-inner {
+        min-height: 130px;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 26px 0;
+      }
+
+      .consent {
+        grid-template-columns: 1fr;
+      }
+
+      .consent-actions {
+        width: 100%;
+      }
+
+      .consent button {
+        flex: 1 1 140px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLCZVW96"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="https://ctlamedica.com/" aria-label="CTL Amedica home">
+        <img
+          src="https://raw.githubusercontent.com/ctlamedicamarketing/2026/sites/images/CTL-Logo-WhiteText.png"
+          alt="CTL Amedica"
+          width="194"
+          height="40"
+        />
+      </a>
+      <div class="header-label">Sales Team Directory</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Connect with your representative</p>
+        <h1 id="page-title">Choose your CTL Amedica sales contact.</h1>
+        <p class="hero-copy">
+          Select a member of the sales team to open their personalized CTL Amedica
+          resource page, contact information, events, and portfolio content.
+        </p>
+      </div>
+      <div class="hero-mark" aria-label="Six sales representatives"></div>
+    </section>
+
+    <section aria-labelledby="directory-title">
+      <div class="directory-heading">
+        <h2 id="directory-title">Sales team</h2>
+        <p>Select a representative to continue.</p>
+      </div>
+
+      <div class="rep-grid" id="repGrid">
+        <!-- Cards are rendered from the configuration object below. -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        © <span id="year"></span> CTL Amedica. All rights reserved.<br />
+        Personalized sales access directory.
+      </div>
+      <a class="footer-link" href="https://ctlamedica.com/" target="_blank" rel="noopener noreferrer">
+        Visit ctlamedica.com <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </footer>
+
+  <aside class="consent" id="consentBanner" aria-live="polite" aria-label="Analytics preferences">
+    <p>
+      <strong>Analytics preferences.</strong>
+      This directory can use Google Analytics through Google Tag Manager to understand visits,
+      traffic sources, engagement, and which representative pages are selected. Do not send personal
+      or patient information through analytics parameters.
+    </p>
+    <div class="consent-actions">
+      <button class="btn-decline" id="declineAnalytics" type="button">Decline analytics</button>
+      <button class="btn-accept" id="acceptAnalytics" type="button">Allow analytics</button>
+    </div>
+  </aside>
+
+  <script>
+    "use strict";
+
+    /* ==========================================================
+       1) SITE CONFIGURATION
+       ========================================================== */
+
+    const CONFIG = {
+      analytics: {
+        gtmContainerId: "GTM-KLCZVW96",
+        requireConsent: true,
+        consentStorageKey: "ctl_sales_analytics_consent"
+      },
+
+      members: [
+        {
+          name: "Lindsay Zatta",
+          initials: "LZ",
+          slug: "lindsay_zatta",
+          url: "https://ctl-sales-lzatta.netlify.app/"
+        },
+        {
+          name: "Marybeth Freeman",
+          initials: "MF",
+          slug: "marybeth_freeman",
+          url: "https://ctl-sales-mfreeman.netlify.app/"
+        },
+        {
+          name: "Sedrick Peck",
+          initials: "SP",
+          slug: "sedrick_peck",
+          url: "https://ctl-sales-speck.netlify.app/"
+        },
+        {
+          name: "Pat Saunders",
+          initials: "PS",
+          slug: "pat_saunders",
+          url: "https://ctl-sales-psaunders.netlify.app/"
+        },
+        {
+          name: "Tyler Woolsey",
+          initials: "TW",
+          slug: "tyler_woolsey",
+          url: "https://ctl-sales-twoolsey.netlify.app/"
+        },
+        {
+          name: "Stefani Pastorini",
+          initials: "SP",
+          slug: "stefani_pastorini",
+          url: "https://ctl-sales-spastorini.netlify.app/"
+        }
+      ]
+    };
+
+    /* ==========================================================
+       2) DATA LAYER HELPERS
+       ========================================================== */
+
+    window.dataLayer = window.dataLayer || [];
+
+    function pushAnalyticsEvent(eventName, params = {}) {
+      window.dataLayer.push({
+        event: eventName,
+        site_scope: "sales_directory",
+        sales_rep: "directory",
+        ...params
+      });
+    }
+
+    /* ==========================================================
+       3) DIRECTORY UI
+       ========================================================== */
+
+    const repGrid = document.getElementById("repGrid");
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    CONFIG.members.forEach((member) => {
+      const card = document.createElement("a");
+      card.className = "rep-card";
+      card.href = buildDestinationUrl(member);
+      card.dataset.repSlug = member.slug;
+      card.dataset.repName = member.name;
+      card.setAttribute("aria-label", `Open ${member.name}'s CTL Amedica page`);
+
+      card.innerHTML = `
+        <div class="rep-top">
+          <div class="avatar" aria-hidden="true">${escapeHtml(member.initials)}</div>
+          <div class="arrow" aria-hidden="true">↗</div>
+        </div>
+        <div class="rep-meta">
+          <h3 class="rep-name">${escapeHtml(member.name)}</h3>
+          <p class="rep-role">CTL Amedica Representative</p>
+          <span class="rep-cta">Open personalized page</span>
+        </div>
+      `;
+
+      card.addEventListener("click", () => {
+        pushAnalyticsEvent("sales_rep_selected", {
+          selected_sales_rep: member.slug,
+          representative_name: member.name,
+          destination_host: new URL(member.url).host,
+          link_url: member.url
+        });
+      });
+
+      repGrid.appendChild(card);
+    });
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    /* ==========================================================
+       4) LINK ATTRIBUTION
+       ========================================================== */
+
+    function buildDestinationUrl(member) {
+      const destination = new URL(member.url);
+
+      // This lightweight parameter identifies the directory choice without
+      // overwriting GA4 acquisition attribution with an internal UTM campaign.
+      destination.searchParams.set("directory_rep", member.slug);
+      return destination.toString();
+    }
+
+    /* ==========================================================
+       5) ANALYTICS CONSENT
+       ========================================================== */
+
+    const consentBanner = document.getElementById("consentBanner");
+    const acceptAnalytics = document.getElementById("acceptAnalytics");
+    const declineAnalytics = document.getElementById("declineAnalytics");
+
+    function getConsent() {
+      try {
+        return localStorage.getItem(CONFIG.analytics.consentStorageKey);
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function setConsent(value) {
+      try {
+        localStorage.setItem(CONFIG.analytics.consentStorageKey, value);
+      } catch (_) {
+        // Preference applies to this page load if storage is unavailable.
+      }
+    }
+
+    function updateGoogleConsent(value) {
+      if (typeof window.gtag !== "function") return;
+
+      window.gtag("consent", "update", {
+        analytics_storage: value === "granted" ? "granted" : "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied"
+      });
+
+      window.dataLayer.push({
+        event: "analytics_consent_updated",
+        analytics_consent: value
+      });
+    }
+
+    function hideConsentBanner() {
+      consentBanner.classList.remove("is-visible");
+    }
+
+    function showConsentBanner() {
+      consentBanner.classList.add("is-visible");
+    }
+
+    acceptAnalytics.addEventListener("click", () => {
+      setConsent("granted");
+      updateGoogleConsent("granted");
+      hideConsentBanner();
+    });
+
+    declineAnalytics.addEventListener("click", () => {
+      setConsent("denied");
+      updateGoogleConsent("denied");
+      hideConsentBanner();
+    });
+
+    const consent = getConsent();
+
+    if (CONFIG.analytics.requireConsent) {
+      if (consent === "granted") {
+        updateGoogleConsent("granted");
+      } else if (consent === "denied") {
+        updateGoogleConsent("denied");
+      } else {
+        showConsentBanner();
+      }
+    } else {
+      setConsent("granted");
+      updateGoogleConsent("granted");
+    }
+
+    // GTM custom-event trigger: directory_view
+    pushAnalyticsEvent("directory_view", {
+      page_type: "sales_directory",
+      representative_count: CONFIG.members.length
+    });
+  </script>
+</body>
+</html>
