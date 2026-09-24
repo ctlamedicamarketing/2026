@@ -11,18 +11,33 @@
   ============================================================
   CTL AMEDICA SALES DIRECTORY — GOOGLE TAG MANAGER
   Container: GTM-KLCZVW96
+  GA4 measurement ID: G-TWN208LQZP
 
-  GA4 Measurement IDs (G-XXXXXXXXXX) are configured INSIDE GTM.
-  This page sends structured dataLayer events that GTM can route
-  to a master GA4 property and/or representative-specific GA4
-  properties.
+  The GA4 Google tag is configured INSIDE GTM. This page exposes
+  the measurement ID to the dataLayer for diagnostics and sends
+  structured dataLayer events that GTM can route to GA4.
+
+  Do not add a second manual gtag.js installation for the same
+  GA4 property, or page views may be duplicated.
   ============================================================
   -->
 
-  <!-- Consent defaults must be set before Google Tag Manager loads. -->
+  <!-- Consent defaults and analytics metadata must be set before GTM loads. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
+
+    window.CTL_ANALYTICS = Object.freeze({
+      gtmContainerId: 'GTM-KLCZVW96',
+      ga4MeasurementId: 'G-TWN208LQZP'
+    });
+
+    window.dataLayer.push({
+      event: 'analytics_config',
+      site_scope: 'sales_directory',
+      gtm_container_id: window.CTL_ANALYTICS.gtmContainerId,
+      ga4_measurement_id: window.CTL_ANALYTICS.ga4MeasurementId
+    });
 
     (function () {
       var stored = null;
@@ -637,6 +652,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const CONFIG = {
       analytics: {
         gtmContainerId: "GTM-KLCZVW96",
+        ga4MeasurementId: "G-TWN208LQZP",
         requireConsent: true,
         consentStorageKey: "ctl_sales_analytics_consent"
       },
@@ -692,6 +708,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         event: eventName,
         site_scope: "sales_directory",
         sales_rep: "directory",
+        gtm_container_id: CONFIG.analytics.gtmContainerId,
+        ga4_measurement_id: CONFIG.analytics.ga4MeasurementId,
         ...params
       });
     }
