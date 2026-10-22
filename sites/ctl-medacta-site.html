@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c10">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Medacta resource menu linking to CTL Amedica product experiences for KLIMT and MATISSE.">
+  <title>Medacta | Product Resources</title>
+  <style>
+    :root {
+      color-scheme:dark;
+      --bg:#0b0c10; --ink:#e8eaed; --muted:#afb6c4;
+      --band1:#141823; --band2:#0f1320;
+      --stroke:#262d3b; --gold:#ffc81a;
+    }
+    * { box-sizing:border-box; }
+    html { min-height:100%; background:var(--bg); }
+    body { margin:0; min-height:100vh; min-height:100dvh; background:var(--bg); color:var(--ink); font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
+    .page { min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:94px; padding:18px clamp(18px,4vw,56px); border-bottom:1px solid var(--stroke); }
+    .brand { font-size:clamp(24px,3vw,33px); letter-spacing:-.045em; font-weight:750; line-height:1.15; }
+    .brand small { display:block; color:var(--gold); font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; margin-bottom:6px; }
+    .header-note { max-width:290px; font-size:12px; text-align:right; color:var(--muted); }
+    nav.stack { flex:1; display:grid; grid-template-rows:repeat(2, minmax(170px,1fr)); min-height:340px; }
+    .band { display:flex; border-top:2px solid var(--gold); overflow:hidden; }
+    .band:first-child { border-top:0; }
+    .b1 { background:var(--band1); }
+    .b2 { background:var(--band2); }
+    .band a { width:100%; min-height:100%; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:20px clamp(20px,7vw,102px); color:var(--ink); text-decoration:none; transition:background .18s ease; }
+    .band a:hover { background:rgba(255,200,26,.055); }
+    .band a:focus-visible { outline:3px solid var(--gold); outline-offset:-5px; }
+    .band-label { display:block; font-size:clamp(25px,4vw,48px); font-weight:680; letter-spacing:-.055em; line-height:1.1; }
+    .band-subtitle { display:block; color:var(--muted); margin-top:8px; font-size:clamp(12px,1.4vw,15px); }
+    .action { white-space:nowrap; border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:12px 17px; font-weight:650; font-size:13px; transition:border-color .18s ease; }
+    .band a:hover .action { border-color:var(--gold); }
+    .arrow { color:var(--gold); font-size:18px; margin-left:7px; }
+    footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 18px; border-top:1px solid var(--stroke); padding:11px clamp(18px,4vw,56px); font-size:11px; color:var(--muted); }
+    .consent { position:fixed; z-index:20; bottom:14px; left:14px; right:14px; max-width:700px; margin:auto; display:none; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; background:#111724; border:1px solid #435064; border-radius:12px; padding:15px; box-shadow:0 20px 50px #0009; }
+    .consent.show { display:flex; }
+    .consent-actions { display:flex; gap:8px; }
+    button { appearance:none; cursor:pointer; border:1px solid #536073; background:#161d2b; color:var(--ink); padding:8px 14px; border-radius:9px; font:600 13px inherit; }
+    button:hover { border-color:var(--gold); }
+    button:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+    @media (max-width:620px) {
+      header { padding:18px 20px; min-height:88px; }
+      .header-note { font-size:11px; max-width:130px; }
+      nav.stack { grid-template-rows:repeat(2,minmax(164px,1fr)); }
+      .band a { padding:18px 22px; gap:12px; }
+      .band-label { font-size:clamp(27px,8.1vw,40px); }
+      .band-subtitle { font-size:12px; }
+      .action { padding:9px 10px; font-size:11px; }
+      .arrow { margin-left:4px; }
+      footer { padding:12px 20px; }
+    }
+    @media (max-width:350px) { .band a { flex-wrap:wrap; } .action { align-self:flex-end; } }
+    @media (prefers-reduced-motion:reduce) { .band a,.action { transition:none; } }
+  </style>
+  <script>
+    // Optional analytics: add an explicitly approved GA4 ID. No tags load by default.
+    window.MEDACTA_CONFIG = {
+      GA4_MEASUREMENT_ID: '',
+      UTM_DEFAULTS: { utm_campaign:'medacta', utm_content:'product_menu' }
+    };
+  </script>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="brand"><small>Product Resource Menu</small>Medacta</div>
+    <div class="header-note">CTL Amedica product information<br>Choose a system to continue</div>
+  </header>
+  <nav class="stack" aria-label="Product resource destinations">
+    <section class="band b1">
+      <a data-slug="klimt" href="https://ctlamedicamarketing.github.io/qr-redirects/r/landing-page/klimt/index.html" aria-label="Open KLIMT video and PDF resources">
+        <span><span class="band-label">KLIMT</span><span class="band-subtitle">Video and PDF downloads</span></span>
+        <span class="action">View resources <span class="arrow" aria-hidden="true">↗</span></span>
+      </a>
+    </section>
+    <section class="band b2">
+      <a data-slug="matisse" href="https://ctlamedicamarketing.github.io/qr-redirects/r/landing-page/matisse/index.html" aria-label="Open MATISSE video and PDF resources">
+        <span><span class="band-label">MATISSE</span><span class="band-subtitle">Surgical technique and product overview PDFs</span></span>
+        <span class="action">View resources <span class="arrow" aria-hidden="true">↗</span></span>
+      </a>
+    </section>
+  </nav>
+  <footer>
+    <span>Medacta · Resource Menu</span>
+    <span>Product documentation remains attributed to CTL Amedica.</span>
+  </footer>
+</div>
+<div id="consent" class="consent" role="dialog" aria-label="Optional analytics consent">
+  <span>May we collect anonymous usage analytics for this menu?</span>
+  <div class="consent-actions">
+    <button type="button" id="deny">No</button>
+    <button type="button" id="accept">Yes</button>
+  </div>
+</div>
+<script>
+  (function(){
+    'use strict';
+    const config=window.MEDACTA_CONFIG||{};
+    const storageKey='medacta-menu-consent';
+    const measurementId=(config.GA4_MEASUREMENT_ID||'').trim();
+    const dialog=document.getElementById('consent');
+    const validId=/^G-[A-Z0-9]+$/.test(measurementId);
+    let permission='denied';
+    try { permission=localStorage.getItem(storageKey)||'denied'; } catch(_e) {}
+    function event(name,params){
+      if(permission!=='granted'||!validId||typeof window.gtag!=='function')return;
+      window.gtag('event',name,params);
+    }
+    function loadAnalytics(){
+      if(!validId||permission!=='granted'||window.__medactaAnalyticsLoaded)return;
+      window.__medactaAnalyticsLoaded=true;
+      window.dataLayer=window.dataLayer||[];
+      window.gtag=function(){window.dataLayer.push(arguments);};
+      window.gtag('consent','default',{
+        analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'
+      });
+      window.gtag('js',new Date());
+      window.gtag('config',measurementId);
+      const script=document.createElement('script');
+      script.async=true;
+      script.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(measurementId);
+      document.head.appendChild(script);
+    }
+    if(validId){
+      let saved=null;
+      try { saved=localStorage.getItem(storageKey); }catch(_e){}
+      if(saved==='granted')loadAnalytics();
+      else if(saved!== 'denied')dialog.classList.add('show');
+      document.getElementById('accept').addEventListener('click',()=>{
+        permission='granted';try{localStorage.setItem(storageKey,'granted');}catch(_e){}
+        dialog.classList.remove('show');loadAnalytics();
+      });
+      document.getElementById('deny').addEventListener('click',()=>{
+        permission='denied';try{localStorage.setItem(storageKey,'denied');}catch(_e){}
+        dialog.classList.remove('show');
+      });
+    }
+    for(const a of document.querySelectorAll('nav a[data-slug]')){
+      a.addEventListener('click',()=>{
+        const url=new URL(a.getAttribute('href'),location.href);
+        const source=new URLSearchParams(location.search);
+        ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(key=>{
+          if(source.has(key)&&!url.searchParams.has(key))url.searchParams.set(key,source.get(key));
+        });
+        if(!url.searchParams.has('utm_campaign'))url.searchParams.set('utm_campaign',(config.UTM_DEFAULTS||{}).utm_campaign||'medacta');
+        if(!url.searchParams.has('utm_content'))url.searchParams.set('utm_content',a.dataset.slug);
+        a.href=url.toString();
+        event('menu_choice',{slug:a.dataset.slug,link_url:a.href});
+      });
+    }
+    if(new URLSearchParams(location.search).get('utm_source')==='qr')event('qr_scan',{page_location:location.href});
+  })();
+</script>
+</body>
+</html>
